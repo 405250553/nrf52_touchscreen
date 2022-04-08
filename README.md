@@ -25,7 +25,7 @@ schematic
 
 由於電阻式觸摸屏的品質和讀數問題，在開始時首先要將觸摸屏校準（Calibration），**方法是通過觸摸液晶屏的4個角，採集 X 和 Y 座標**的12位值(我的code還是以16bit做計算，反正shift 4位也只是= /16)，再通過數學等比公式計算，就可以得到比例值。
 
-```c=
+```c
 //XPT2046_touch.h
 //ADC VALUE 的 4個角最大最小值
 #define XPT2046_MIN_RAW_X 3400
@@ -36,7 +36,7 @@ schematic
 
 ## Project 介紹
 每隔1ms就執行函式看現在是否有東西觸控螢幕
-```C=
+```C
 int main(void)
 {
     uart_init();
@@ -61,7 +61,7 @@ int main(void)
 ```
 
 當螢幕感到按壓時，**T_IRQ那隻腳會pull low**，此時再讀取data
-```C=
+```C
 //return True,
 bool XPT2046_TouchPressed(void)
 {
@@ -72,7 +72,7 @@ bool XPT2046_TouchPressed(void)
 
 由於是adc sample，為了減少誤差，使用多次sample來取平均
 
-```C=
+```C
 bool XPT2046_TouchGetCoordinates_Average(uint16_t* x, uint16_t* y)
 {
 #ifndef SOFTWARE_SPI
