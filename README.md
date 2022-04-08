@@ -148,7 +148,7 @@ bool XPT2046_TouchGetCoordinates_Average(uint16_t* x, uint16_t* y)
 }
 ```
 ## 成果
-![](https://i.imgur.com/Dc0UCE7.png)
+![touchpad](https://user-images.githubusercontent.com/44420087/162516532-90c6522d-7615-44a1-9209-ba2c22a6f310.gif)
 
 
 ## 參考
