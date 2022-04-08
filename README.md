@@ -36,7 +36,7 @@ schematic
 
 ## Project 介紹
 每隔1ms就執行函式看現在是否有東西觸控螢幕
-```c=
+```C=
 int main(void)
 {
     uart_init();
@@ -61,7 +61,7 @@ int main(void)
 ```
 
 當螢幕感到按壓時，**T_IRQ那隻腳會pull low**，此時再讀取data
-```c=
+```C=
 //return True,
 bool XPT2046_TouchPressed(void)
 {
@@ -72,7 +72,7 @@ bool XPT2046_TouchPressed(void)
 
 由於是adc sample，為了減少誤差，使用多次sample來取平均
 
-```c=
+```C=
 bool XPT2046_TouchGetCoordinates_Average(uint16_t* x, uint16_t* y)
 {
 #ifndef SOFTWARE_SPI
